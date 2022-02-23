@@ -1,36 +1,15 @@
-<script>
-  import { ui } from "$content/layout.js";
-  import Nav from "$lib/Nav.svelte";
-  import "$fonts/circular.css";
-  import "$fonts/operator.css";
+<script lang="ts">
+	import "verdu/fonts/circular.css";
+	import "verdu/fonts/operator.css";
 </script>
 
 <main>
-  <Nav />
-
-  <div class="view fill">
-    <slot />
-  </div>
-
-  <footer class="row fcenter xfill">
-    <p>{ui.footer}</p>
-  </footer>
+	<slot />
 </main>
 
 <style lang="scss">
-  :global {
-    @import "./src/_reset.scss";
-    @import "../node_modules/verdu/verdu.scss";
-  }
-
-  .view {
-    height: calc(100% - 90px);
-  }
-
-  footer {
-    height: 25px;
-    background: $pri;
-    color: $white;
-    font-size: 12px;
-  }
+	:global {
+		@import "verdu/_reset.scss";
+		@import "verdu/verdu.scss";
+	}
 </style>
