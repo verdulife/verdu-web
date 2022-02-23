@@ -56,15 +56,23 @@ input,
 textarea,
 select,
 option {
-  font-family: "Circular Std", "Segoe UI Emoji", sans-serif;
+  font-family: "Gosha Sans", "Segoe UI Emoji", sans-serif;
 }
 
+h1,
+h2,
+h3,
+h4,
 input,
 textarea,
 select,
 option,
 p {
   font-weight: lighter;
+}
+
+strong {
+  @include textGradient;
 }
 
 //hyperlinks

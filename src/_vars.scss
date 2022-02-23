@@ -1,13 +1,14 @@
 //colors
-$pri: #ffd000;
-$sec: #ffee00;
-$black: #313131;
+$pri: #00fefe;
+$sec: #7d6bff;
+$ter: #fa8efd;
+$black: #161616;
 $white: #fff;
-$grey: #808080;
+$grey: #929292;
 
 //ui colors
-$bg: #fafafa;
-$border: #e6e6e6;
+$bg: $black;
+$border: $grey;
 
 //text
 $base: $black;
@@ -20,15 +21,37 @@ $warning: #ff9900;
 $error: #ed3f14;
 $disabled: $border;
 
-//shadows
-$shadow: 0 2px 5px 0 rgba($black, 0.2);
-$shadow-hard: 0 2px 5px 0 rgba(#000, 0.8);
-$inset: inset 0 2px 5px 0 rgba($black, 0.2);
-$inset-hard: inset 0 2px 5px 0 rgba(#000, 0.8);
+//gradient
+$grad: linear-gradient(30deg, $pri calc(100% / 3), $sec calc((100% / 3) * 2), $ter);
 
 //media queries
+$max: 1200px;
 $mobile: 600px;
 $tablet: 900px;
 
 //text size
 $text: 1em;
+
+@mixin maxWidth {
+  max-width: $max;
+  margin: 0 auto;
+}
+
+@mixin textGradient {
+  background: $grad no-repeat;
+  background-size: 100% 200%;
+  background-position: 0 0;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animateTextGradient 2s ease-in-out infinite;
+}
+
+@keyframes animateTextGradient {
+  50% {
+    background-position: 0 100%;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}

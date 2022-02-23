@@ -1,15 +1,18 @@
 <script lang="ts">
-	import "verdu/fonts/circular.css";
-	import "verdu/fonts/operator.css";
+	import 'verdu/fonts/operator.css';
+	import '$fonts/gosha.css';
+
+	import Nav from '$lib/Nav.svelte';
 </script>
 
 <main>
+	<Nav />
 	<slot />
 </main>
 
 <style lang="scss">
 	:global {
-		@import "verdu/_reset.scss";
-		@import "verdu/verdu.scss";
+		@import 'verdu/verdu.scss';
+		@import './src/_reset.scss';
 	}
 </style>

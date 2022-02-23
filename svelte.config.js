@@ -5,25 +5,17 @@ import { resolve } from 'path';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-
 	preprocess: preprocess({
 		scss: {
 			prependData: '@import "./src/_vars.scss";'
 		},
 		postcss: {
-			plugins: [autoprefixer()]
+			plugins: [autoprefixer]
 		}
 	}),
 
 	kit: {
 		adapter: adapter(),
-
-		// Override http methods in the Todo forms
-		methodOverride: {
-			allowed: ['PATCH', 'DELETE']
-		},
-
-		// Custom aliases for Vite
 		vite: {
 			resolve: {
 				alias: {

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { message } from '$lib/utils';
+	import Home from '$lib/Home.svelte';
 
 	console.log(message);
 </script>
@@ -8,10 +9,6 @@
 	<title>Home</title>
 </svelte:head>
 
-<h1>{message}</h1>
-
-<style lang="scss">
-	h1 {
-		color: $pri;
-	}
-</style>
+<div class="scroll">
+	<Home />
+</div>
