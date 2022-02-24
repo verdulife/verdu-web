@@ -15,4 +15,9 @@
 		@import 'verdu/verdu.scss';
 		@import './src/_reset.scss';
 	}
+
+	main {
+		background: url('/bg.svg') no-repeat center;
+		background-size: calc(100% - (100% / 6) * 2);
+	}
 </style>
