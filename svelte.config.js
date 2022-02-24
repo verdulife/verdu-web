@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-auto';
+import vercel from "@sveltejs/adapter-vercel";
 import preprocess from 'svelte-preprocess';
 import autoprefixer from 'autoprefixer';
 import { resolve } from 'path';
@@ -15,7 +15,7 @@ const config = {
 	}),
 
 	kit: {
-		adapter: adapter(),
+		adapter: vercel(),
 		vite: {
 			resolve: {
 				alias: {
