@@ -9,7 +9,6 @@
   outline: none;
   box-shadow: none;
   line-height: 1.4;
-  appearance: none;
 
   // renders
   image-rendering: crisp-edges;
@@ -19,9 +18,6 @@
 
   // disable blue box on mobile
   -webkit-tap-highlight-color: transparent;
-  &:active {
-    -webkit-tap-highlight-color: transparent;
-  }
 }
 
 ::selection {

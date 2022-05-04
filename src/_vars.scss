@@ -22,7 +22,7 @@ $error: #ed3f14;
 $disabled: $border;
 
 //gradient
-$grad: linear-gradient(30deg, $pri calc(100% / 3), $sec calc((100% / 3) * 2), $ter);
+$grad: linear-gradient(30deg, $pri, $sec, $ter);
 
 //media queries
 $max: 1200px;
@@ -43,15 +43,17 @@ $text: 1em;
   background-position: 0 0;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: animateTextGradient 2s ease-in-out infinite;
+  animation: animateGradient 2s ease-in-out infinite;
 }
 
-@keyframes animateTextGradient {
+@keyframes animateGradient {
   50% {
     background-position: 0 100%;
   }
+}
 
-  100% {
-    background-position: 0 0;
+@keyframes animateShadow {
+  50% {
+    text-shadow: -35px 0 80px rgba($pri, 0.2), 0 0 80px rgba($sec, 0.2), 35px 0 80px rgba($ter, 0.2);
   }
 }
