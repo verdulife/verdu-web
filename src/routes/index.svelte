@@ -22,12 +22,12 @@
 		}
 
 		&::-webkit-scrollbar-track {
-			background-color: $black;
+			background-color: #000;
 		}
 
 		&::-webkit-scrollbar-thumb {
 			background: $grad;
-			border: 5px solid $black;
+			border: 5px solid #000;
 		}
 	}
 </style>

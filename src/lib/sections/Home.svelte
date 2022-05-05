@@ -18,7 +18,7 @@
 		</div>
 
 		<div class="image-wrapper col acenter">
-			<img src="/verdu-bg.png" alt="verdu" />
+			<img src="/verdu.png" alt="verdu" />
 		</div>
 	</div>
 
@@ -64,8 +64,7 @@
 		width: 40%;
 
 		img {
-			height: 80vh;
-			transform: rotateY(180deg);
+			height: 100vh;
 		}
 	}
 
@@ -82,7 +81,7 @@
 		}
 
 		span {
-			background: $black;
+			background: #000;
 			padding: 5px;
 		}
 	}

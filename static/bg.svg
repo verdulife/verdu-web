@@ -1,7 +1,7 @@
 <svg width="962" height="3493" viewBox="0 0 962 3493" fill="none" xmlns="http://www.w3.org/2000/svg">
-<line x1="1.00003" y1="-2" x2="0.999985" y2="3493" stroke="black" stroke-width="2"/>
-<line x1="241" y1="-2" x2="241" y2="3493" stroke="black" stroke-width="2"/>
-<line x1="481" y1="-2" x2="481" y2="3493" stroke="black" stroke-width="2"/>
-<line x1="721" y1="-2" x2="721" y2="3493" stroke="black" stroke-width="2"/>
-<line x1="961" y1="-2" x2="961" y2="3493" stroke="black" stroke-width="2"/>
+<line x1="1.00003" y1="-2" x2="0.999985" y2="3493" stroke="#101010" stroke-width="2"/>
+<line x1="241" y1="-2" x2="241" y2="3493" stroke="#101010" stroke-width="2"/>
+<line x1="481" y1="-2" x2="481" y2="3493" stroke="#101010" stroke-width="2"/>
+<line x1="721" y1="-2" x2="721" y2="3493" stroke="#101010" stroke-width="2"/>
+<line x1="961" y1="-2" x2="961" y2="3493" stroke="#101010" stroke-width="2"/>
 </svg>
