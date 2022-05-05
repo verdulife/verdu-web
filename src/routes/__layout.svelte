@@ -2,7 +2,7 @@
 	import 'verdu/fonts/operator.css';
 	import '$fonts/gosha.css';
 
-	import Nav from '$lib/Nav.svelte';
+	import Nav from '$lib/components/Nav.svelte';
 </script>
 
 <main>

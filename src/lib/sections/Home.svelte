@@ -50,8 +50,8 @@
 		}
 
 		strong {
-			text-shadow: -70px 0 80px rgba($pri, 0.2), 0 0 80px rgba($sec, 0.2),
-				70px 0 80px rgba($ter, 0.2);
+			text-shadow: -35px 0 40px rgba($pri, 0.2), 0 0 40px rgba($sec, 0.2),
+				35px 0 40px rgba($ter, 0.2);
 		}
 
 		small {
@@ -65,13 +65,14 @@
 
 		img {
 			height: 100vh;
+			transform: rotateY(180deg);
 		}
 	}
 
 	.scroller {
 		position: absolute;
 		bottom: 0;
-		left: 50%;
+		left: calc(50% + 7px);
 		transform: translateX(-50%);
 
 		v-div {
