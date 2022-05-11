@@ -64,7 +64,8 @@
 		width: 40%;
 
 		img {
-			height: 100vh;
+			height: 140vh;
+			max-height: 1200px;
 			transform: rotateY(180deg);
 		}
 	}

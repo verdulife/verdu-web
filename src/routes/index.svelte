@@ -1,9 +1,7 @@
 <script lang="ts">
-	import { message } from '$lib/utils';
 	import Home from '$lib/sections/Home.svelte';
 	import Skills from '$lib/sections/Skills.svelte';
-
-	console.log(message);
+	import Projects from '$lib/sections/Projects.svelte';
 </script>
 
 <svelte:head>
@@ -13,6 +11,7 @@
 <div class="scroll">
 	<Home />
 	<Skills />
+	<Projects />
 </div>
 
 <style lang="scss">

@@ -6,37 +6,67 @@
 			src: '/logos/html5.png',
 			alt: 'HTML5 logotype',
 			title: 'HTML5',
-			since: '2015'
+			since: '2015',
+			color: '#EF5C28'
 		},
 		{
 			src: '/logos/css3.png',
 			alt: 'CSS3 logotype',
 			title: 'CSS3',
-			since: '2015'
+			since: '2015',
+			color: '#1F90C8'
 		},
 		{
 			src: '/logos/js.png',
 			alt: 'Javascript logotype',
 			title: 'Javascript',
-			since: '2015'
+			since: '2015',
+			color: '#F8E11F'
 		},
 		{
 			src: '/logos/scss.png',
 			alt: 'SCSS logotype',
 			title: 'SCSS',
-			since: '2016'
+			since: '2016',
+			color: '#D16F9D'
 		},
 		{
 			src: '/logos/svelte.png',
 			alt: 'Svelte logotype',
 			title: 'Svelte',
-			since: '2019'
+			since: '2019',
+			color: '#FF3900'
 		},
 		{
 			src: '/logos/pwa.png',
 			alt: 'PWA logotype',
 			title: 'PWA',
-			since: '2018'
+			since: '2018',
+			color: '#6F2ECF'
+		}
+	];
+
+	const mastering = [
+		{
+			src: '/logos/react.png',
+			alt: 'React logotype',
+			title: 'React / Next.js',
+			since: '2020',
+			color: '#61DAFB'
+		},
+		{
+			src: '/logos/ts.png',
+			alt: 'Typescript logotype',
+			title: 'Typescript',
+			since: '2021',
+			color: '#017ACB'
+		},
+		{
+			src: '/logos/graphql.png',
+			alt: 'GraphQL logotype',
+			title: 'GraphQL',
+			since: '2022',
+			color: '#E535AB'
 		}
 	];
 </script>
@@ -58,13 +88,29 @@
 		</nav>
 	</header>
 
-	<div class="tabs-wrapper col acenter xfill">
+	<div class="skills-wrapper col acenter xfill">
 		<ul class="row jcenter xfill">
 			{#each skills as { ...props }}
 				<Skill {...props} />
 			{/each}
 		</ul>
 	</div>
+
+	<footer class="col acenter xfill">
+		<p>
+			Because one of my passions is <strong>keep learning</strong>,
+			<br />
+			this are my current mastering skills
+		</p>
+
+		<div class="skills-wrapper col acenter xfill">
+			<ul class="row jcenter xfill">
+				{#each mastering as { ...props }}
+					<Skill {...props} />
+				{/each}
+			</ul>
+		</div>
+	</footer>
 </section>
 
 <style lang="scss">
@@ -99,6 +145,8 @@
 	}
 
 	nav {
+		padding: 0 60px;
+
 		li {
 			cursor: pointer;
 			position: relative;
@@ -122,11 +170,20 @@
 		}
 	}
 
-	.tabs-wrapper {
-		margin-top: 60px;
-		
+	.skills-wrapper {
+		margin-top: 80px;
+
 		ul {
-			gap: 40px;
+			gap: 100px;
+		}
+	}
+
+	footer {
+		padding: 15% 0;
+
+		p {
+			text-align: center;
+			font-size: 28px;
 		}
 	}
 </style>

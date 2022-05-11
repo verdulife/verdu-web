@@ -1,8 +1,8 @@
 <script lang="ts">
-	export let src: string, alt: string, title: string, since: string;
+	export let src: string, alt: string, title: string, since: string, color: string;
 </script>
 
-<article class="row fcenter">
+<article class="row fcenter" style="--bg-color: {color}">
 	<picture>
 		<img {src} {alt} {title} />
 	</picture>
@@ -19,15 +19,17 @@
 
 <style lang="scss">
 	article {
+		--bg-color: white;
 		position: relative;
 		width: 300px;
 
 		&:before {
 			content: '';
 			position: absolute;
-			inset: 10px;
-			background: rgba(red, 0.3);
-      filter: blur(50px);
+			inset: 10px 10px 10px -40px;
+			background: var(--bg-color);
+			filter: blur(60px);
+			opacity: 0.3;
 		}
 	}
 
