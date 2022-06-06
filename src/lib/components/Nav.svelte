@@ -1,5 +1,39 @@
+<script lang="ts">
+	import { onMount } from 'svelte';
+
+	const sections = [
+		{
+			label: 'home',
+			href: '#home'
+		},
+		{
+			label: 'skills',
+			href: '#skills'
+		},
+		{
+			label: 'projects',
+			href: '#projects'
+		},
+		{
+			label: 'contact',
+			href: '#contact'
+		}
+	];
+
+	let currentSection: string;
+
+	onMount(() => {
+		const scroll = document.querySelector('.scroll') as HTMLElement;
+		currentSection = history.state.section;
+
+		scroll.addEventListener('scroll', () => {
+			currentSection = history.state.section;
+		});
+	});
+</script>
+
 <nav class="topbar row jbetween xfill">
-	<a href="/#home">
+	<a href="/">
 		<img src="/logo-color.svg" alt="verdu" />
 	</a>
 
@@ -10,10 +44,9 @@
 
 <nav class="leftbar col jcenter yfill">
 	<ul class="col jbetween">
-		<li><a href="/#home">HOME</a></li>
-		<li><a href="/#skills">SKILLS</a></li>
-		<li><a href="/#portfolio">PORTFOLIO</a></li>
-		<li><a href="/#contact">CONTACT</a></li>
+		{#each sections as { label, href }}
+			<li><a class:active={label === currentSection} {href}>{label}</a></li>
+		{/each}
 	</ul>
 </nav>
 
@@ -46,6 +79,7 @@
 		a {
 			color: $grey;
 			font-weight: bold;
+			text-transform: uppercase;
 			writing-mode: vertical-rl;
 			transform: rotate(180deg);
 			padding: 24px 12px;
@@ -55,6 +89,10 @@
 			&:hover {
 				@include textGradient;
 			}
+		}
+
+		.active {
+			@include textGradient;
 		}
 	}
 </style>

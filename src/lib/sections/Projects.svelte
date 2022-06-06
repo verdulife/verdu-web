@@ -1,43 +1,39 @@
 <script lang="ts">
-	let sortBy = 'recent';
+	import { fade } from 'svelte/transition';
+	import { web } from '$lib/data/projects';
+	import Project from '$lib/components/Project.svelte';
+
+	const projects = [web];
+	const projectsLabel = ['web'];
+	let tabIndex = 0;
+	$: currentTab = projects[tabIndex];
+
+	function changeTab(i: number) {
+		tabIndex = i;
+	}
 </script>
 
-<section id="skills" class="col acenter">
+<section id="projects" class="col acenter">
 	<header class="content col acenter xfill">
 		<h2>Projects</h2>
 		<p>Here you can see a curated list of some of my projects</p>
 
-		<nav class="row acenter xfill">
-			<ul class="filters row acenter grow">
+		<nav class="row jcenter xfill">
+			<ul class="filters row jcenter xfill">
 				<li class="active">WEB / APP</li>
 				<li>LOGOTYPE</li>
 				<li>LAYOUT</li>
 				<li>ANIMATION</li>
 			</ul>
-
-			<button>SORT BY {sortBy.toLocaleUpperCase()}</button>
 		</nav>
 	</header>
 
 	<ul class="grid">
-		<li>
-			<article class="row fill" />
-		</li>
-		<li>
-			<article class="row fill" />
-		</li>
-		<li>
-			<article class="row fill" />
-		</li>
-		<li>
-			<article class="row fill" />
-		</li>
-		<li>
-			<article class="row fill" />
-		</li>
-		<li>
-			<article class="row fill" />
-		</li>
+		{#each currentTab as { ...props }}
+			<li transition:fade>
+				<Project {...props} />
+			</li>
+		{/each}
 	</ul>
 </section>
 
@@ -46,6 +42,7 @@
 		position: relative;
 		@include maxWidth;
 		color: $white;
+		padding: 10% 0 5% 0;
 	}
 
 	h2 {
@@ -89,7 +86,7 @@
 		margin-top: 40px;
 
 		li:nth-of-type(1) {
-			grid-row: 1 ;
+			grid-row: 1;
 			grid-column: 1;
 		}
 
@@ -116,11 +113,6 @@
 		li:nth-of-type(6) {
 			grid-row: 2;
 			grid-column: 3 / 5;
-		}
-
-		article {
-			background: $grad;
-			border-radius: 16px;
 		}
 	}
 </style>

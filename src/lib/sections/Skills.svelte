@@ -1,74 +1,16 @@
 <script lang="ts">
 	import Skill from '$lib/components/Skill.svelte';
+	import { frontend, design, backend, devops, mastering } from '$lib/data/skills';
+	import { fade } from 'svelte/transition';
 
-	const skills = [
-		{
-			src: '/logos/html5.png',
-			alt: 'HTML5 logotype',
-			title: 'HTML5',
-			since: '2015',
-			color: '#EF5C28'
-		},
-		{
-			src: '/logos/css3.png',
-			alt: 'CSS3 logotype',
-			title: 'CSS3',
-			since: '2015',
-			color: '#1F90C8'
-		},
-		{
-			src: '/logos/js.png',
-			alt: 'Javascript logotype',
-			title: 'Javascript',
-			since: '2015',
-			color: '#F8E11F'
-		},
-		{
-			src: '/logos/scss.png',
-			alt: 'SCSS logotype',
-			title: 'SCSS',
-			since: '2016',
-			color: '#D16F9D'
-		},
-		{
-			src: '/logos/svelte.png',
-			alt: 'Svelte logotype',
-			title: 'Svelte',
-			since: '2019',
-			color: '#FF3900'
-		},
-		{
-			src: '/logos/pwa.png',
-			alt: 'PWA logotype',
-			title: 'PWA',
-			since: '2018',
-			color: '#6F2ECF'
-		}
-	];
+	const skills = [frontend, design, backend, devops];
+	const skillsLabel = ['frontend', 'design', 'backend', 'devops'];
+	let tabIndex = 0;
+	$: currentTab = skills[tabIndex];
 
-	const mastering = [
-		{
-			src: '/logos/react.png',
-			alt: 'React logotype',
-			title: 'React / Next.js',
-			since: '2020',
-			color: '#61DAFB'
-		},
-		{
-			src: '/logos/ts.png',
-			alt: 'Typescript logotype',
-			title: 'Typescript',
-			since: '2021',
-			color: '#017ACB'
-		},
-		{
-			src: '/logos/graphql.png',
-			alt: 'GraphQL logotype',
-			title: 'GraphQL',
-			since: '2022',
-			color: '#E535AB'
-		}
-	];
+	function changeTab(i: number) {
+		tabIndex = i;
+	}
 </script>
 
 <section id="skills" class="col acenter">
@@ -80,18 +22,19 @@
 
 		<nav class="row jcenter xfill">
 			<ul class="row jaround xfill">
-				<li class="active">frontend</li>
-				<li>design</li>
-				<li>backend</li>
-				<li>devOps</li>
+				{#each skillsLabel as skill, i}
+					<li class:active={tabIndex === i} on:click={() => changeTab(i)}>{skill}</li>
+				{/each}
 			</ul>
 		</nav>
 	</header>
 
 	<div class="skills-wrapper col acenter xfill">
 		<ul class="row jcenter xfill">
-			{#each skills as { ...props }}
-				<Skill {...props} />
+			{#each currentTab as { ...props }}
+				<div transition:fade>
+					<Skill {...props} />
+				</div>
 			{/each}
 		</ul>
 	</div>
@@ -118,7 +61,7 @@
 		position: relative;
 		@include maxWidth;
 		color: $white;
-		padding: 10% 0;
+		padding: 10% 0 5% 0;
 	}
 
 	h1 {
@@ -179,7 +122,7 @@
 	}
 
 	footer {
-		padding: 15% 0;
+		padding-top: 15%;
 
 		p {
 			text-align: center;

@@ -11,8 +11,8 @@
 				I'm <strong>verdu</strong>, frontend developer, graphic, UI & UX designer
 			</h1>
 
-			<div class="row">
-				<Button href="#portfolio">PORTFOLIO</Button>
+			<div class="cta row">
+				<Button href="#projects">PROJECTS</Button>
 				<Button type="secondary" href="#contact">CONTACT</Button>
 			</div>
 		</div>
@@ -24,7 +24,7 @@
 
 	<div class="scroller col fcenter">
 		<v-div />
-		<span>My skills</span>
+		<span><a href="#skills">My skills</a></span>
 		<v-div />
 	</div>
 </section>
@@ -60,6 +60,10 @@
 		}
 	}
 
+	.cta {
+		gap: 10px;
+	}
+
 	.image-wrapper {
 		width: 40%;
 
@@ -85,6 +89,10 @@
 		span {
 			background: #000;
 			padding: 5px;
+
+			a {
+				color: $white;
+			}
 		}
 	}
 </style>

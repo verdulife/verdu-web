@@ -33,6 +33,12 @@
 		}
 	}
 
+	img {
+		width: 80px;
+		height: 80px;
+		object-fit: contain;
+	}
+
 	aside {
 		padding: 20px;
 

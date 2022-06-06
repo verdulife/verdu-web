@@ -1,17 +1,27 @@
 <script lang="ts">
+	export let size = 'normal';
 	export let type = 'primary';
+	export let target = '_self';
 	export let href: string;
 </script>
 
-<a class="btn {type}" {href}>
+<a class="btn {size} {type}" {href} {target}>
 	<slot />
 </a>
 
 <style lang="scss">
 	a.btn {
 		border: 0;
-		margin-right: 20px;
+	}
+
+	.normal {
+		font-size: 14px;
 		padding: 16px 54px;
+	}
+
+	.small {
+		font-size: 14px;
+		padding: 10px 20px;
 	}
 
 	.primary {
@@ -26,10 +36,8 @@
 	}
 
 	.secondary {
+		background: rgba(#000, 0.3);
+		backdrop-filter: blur(10px);
 		color: $white;
-
-		&:hover {
-			opacity: 0.7;
-		}
 	}
 </style>
