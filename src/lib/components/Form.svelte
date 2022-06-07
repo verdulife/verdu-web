@@ -1,7 +1,33 @@
 <script lang="ts">
-	import Button from '$lib/components/Button.svelte';
+	let send_btn = 'SEND';
 
-	async function sendForm() {}
+	async function sendForm() {
+		send_btn = 'SENDING...';
+
+		const form = document.querySelector('form');
+		const data = Object.fromEntries(new FormData(form) as any);
+
+		const req = await fetch('/form', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(data)
+		});
+
+		if (!req.ok) alert('An error occurred while sending the form. Please try again.');
+		else {
+			setTimeout(() => {
+				send_btn = 'MESSAGE SENT 😉';
+
+				setTimeout(() => {
+					send_btn = 'SEND';
+				}, 2000);
+			}, 1000);
+		}
+
+		form.reset();
+	}
 </script>
 
 <form class="col acenter xfill" on:submit|preventDefault={sendForm}>
@@ -27,7 +53,7 @@
 		<textarea class="xfill" name="message" id="message" placeholder="Here your message" required />
 	</div>
 
-	<button>SEND</button>
+	<button>{send_btn}</button>
 </form>
 
 <style lang="scss">
