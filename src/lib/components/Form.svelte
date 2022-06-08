@@ -70,6 +70,7 @@
 	input,
 	textarea {
 		background: $white;
+		border-radius: 0;
 	}
 
 	textarea {
