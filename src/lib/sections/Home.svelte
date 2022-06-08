@@ -8,10 +8,12 @@
 			<h1>
 				<small>hi👋</small>
 				<br />
-				I'm <strong>verdu</strong>, frontend developer, graphic, UI & UX designer
+				I'm <strong>verdu</strong>, frontend developer, graphic,
+				<br>
+				UI & UX designer
 			</h1>
 
-			<div class="cta row">
+			<div class="cta row xfill">
 				<Button href="#projects">PROJECTS</Button>
 				<Button type="secondary" href="#contact">CONTACT</Button>
 			</div>
@@ -38,12 +40,25 @@
 
 	.text-wrapper {
 		width: 60%;
+		z-index: 1;
+
+		@media (max-width: $tablet) {
+			width: 100%;
+		}
 	}
 
 	h1 {
-		font-size: 70px;
+		font-size: 4.5vw;
 		line-height: 1.1;
 		margin-bottom: 40px;
+
+		@media (max-width: $tablet) {
+			font-size: 50px;
+		}
+		
+		@media (max-width: $mobile) {
+			font-size: 45px;
+		}
 
 		* {
 			line-height: 1.1;
@@ -55,13 +70,25 @@
 		}
 
 		small {
-			font-size: 60px;
-			padding-left: 2ch;
+			font-size: 3.5vw;
+			padding-left: 3.1ch;
+			
+			@media (max-width: $tablet) {
+				font-size: 40px;
+			}
+			
+			@media (max-width: $mobile) {
+				padding-left: 2.7ch;
+			}
 		}
 	}
 
 	.cta {
 		gap: 10px;
+
+		@media (max-width: $mobile) {
+			justify-content: center;
+		}
 	}
 
 	.image-wrapper {
@@ -69,8 +96,14 @@
 
 		img {
 			height: 140vh;
-			max-height: 1200px;
+			max-height: 1000px;
 			transform: rotateY(180deg);
+		}
+
+		@media (max-width: $tablet) {
+			position: absolute;
+			top: -1%;
+			right: -15%;
 		}
 	}
 

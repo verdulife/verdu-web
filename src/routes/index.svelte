@@ -55,6 +55,11 @@
 <style lang="scss">
 	.scroll {
 		scroll-behavior: smooth;
+		padding: 0 100px;
+
+		@media (max-width: $tablet) {
+			padding: 0 40px;
+		}
 
 		&::-webkit-scrollbar {
 			width: 14px;

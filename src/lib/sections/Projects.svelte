@@ -20,10 +20,10 @@
 
 		<nav class="row jcenter xfill">
 			<ul class="filters row jcenter xfill">
-				<li class="active">WEB / APP</li>
+				<li class="active">WEBSITE</li>
+				<li>APP</li>
 				<li>LOGOTYPE</li>
 				<li>LAYOUT</li>
-				<li>ANIMATION</li>
 			</ul>
 		</nav>
 	</header>
@@ -43,6 +43,10 @@
 		@include maxWidth;
 		color: $white;
 		padding: 10% 0 5% 0;
+
+		@media (max-width: $mobile) {
+			padding-top: 100px;
+		}
 	}
 
 	h2 {
@@ -52,19 +56,29 @@
 
 	p {
 		font-size: 20px;
+		text-align: center;
 		margin-bottom: 40px;
 	}
 
 	.filters {
 		gap: 20px;
 
+		@media (max-width: $mobile) {
+			gap: 10px;
+		}
+
 		li {
-			padding: 10px 20px;
 			background: $black;
 			font-size: 14px;
 			border-radius: 100px;
 			box-shadow: inset -1px -1px 1px -1px rgba($white, 0.2);
+			padding: 10px 20px;
 			transition: 200ms;
+
+			@media (max-width: $mobile) {
+				font-size: 12px;
+				padding: 7px 14px;
+			}
 		}
 
 		.active {

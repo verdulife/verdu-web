@@ -31,26 +31,50 @@
 			filter: blur(60px);
 			opacity: 0.3;
 		}
+
+		@media (max-width: $tablet) {
+			width: 280px;
+		}
 	}
 
 	img {
 		width: 80px;
 		height: 80px;
 		object-fit: contain;
+
+		@media (max-width: $tablet) {
+			width: 70px;
+			height: 70px;
+		}
+
+		@media (max-width: $mobile) {
+			width: 50px;
+			height: 50px;
+		}
 	}
 
 	aside {
 		padding: 20px;
+		padding-right: 0;
 
 		h3 {
 			text-shadow: -35px 0 40px 0 rgba($pri, 0.2), 0 0 40px 0 rgba($sec, 0.2),
 				35px 0 40px 0 rgba($ter, 0.2);
+
+			@media (max-width: $mobile) {
+				line-height: 1;
+			}
 		}
 	}
 
 	footer {
 		gap: 10px;
 		margin-top: 10px;
+
+		@media (max-width: $mobile) {
+			gap: 10px;
+			margin-top: 0;
+		}
 
 		span {
 			height: 1px;

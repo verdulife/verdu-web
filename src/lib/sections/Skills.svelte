@@ -32,9 +32,9 @@
 	<div class="skills-wrapper col acenter xfill">
 		<ul class="row jcenter xfill">
 			{#each currentTab as { ...props }}
-				<div transition:fade>
+				<li transition:fade>
 					<Skill {...props} />
-				</div>
+				</li>
 			{/each}
 		</ul>
 	</div>
@@ -62,6 +62,10 @@
 		@include maxWidth;
 		color: $white;
 		padding: 10% 0 5% 0;
+
+		@media (max-width: $mobile) {
+			padding-top: 100px;
+		}
 	}
 
 	h1 {
@@ -69,6 +73,11 @@
 		font-size: 120px;
 		line-height: 1.1;
 		margin-bottom: 40px;
+
+		@media (max-width: $mobile) {
+			font-size: 80px;
+			margin-bottom: 20px;
+		}
 
 		* {
 			line-height: 1.1;
@@ -84,11 +93,21 @@
 			top: -15px;
 			left: 5px;
 			font-size: 40px;
+
+			@media (max-width: $mobile) {
+				top: -10px;
+				left: 5px;
+				font-size: 24px;
+			}
 		}
 	}
 
 	nav {
 		padding: 0 60px;
+
+		@media (max-width: $mobile) {
+			padding: 0;
+		}
 
 		li {
 			cursor: pointer;
@@ -99,6 +118,15 @@
 
 			&:hover {
 				@include textGradient;
+			}
+
+			@media (max-width: $tablet) {
+				font-size: 20px;
+			}
+
+			@media (max-width: $mobile) {
+				font-size: 14px;
+				padding: 10px;
 			}
 		}
 
@@ -116,17 +144,37 @@
 	.skills-wrapper {
 		margin-top: 80px;
 
+		@media (max-width: $mobile) {
+			margin-top: 40px;
+		}
+
 		ul {
 			gap: 100px;
+
+			@media (max-width: $tablet) {
+				gap: 70px;
+			}
+
+			@media (max-width: $mobile) {
+				gap: 10px;
+			}
 		}
 	}
 
 	footer {
 		padding-top: 15%;
 
+		@media (max-width: $mobile) {
+			padding-top: 80px;
+		}
+
 		p {
 			text-align: center;
 			font-size: 28px;
+
+			@media (max-width: $mobile) {
+				font-size: 26px;
+			}
 		}
 	}
 </style>

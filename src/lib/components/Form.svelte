@@ -61,6 +61,10 @@
 		max-width: 500px;
 		margin-top: 100px;
 		gap: 30px;
+		
+		@media (max-width: $mobile) {
+			margin-top: 50px;
+		}
 	}
 
 	input,
@@ -74,17 +78,19 @@
 	}
 
 	button {
-		border: 0;
-		margin-right: 20px;
-		padding: 16px 54px;
-
 		background: $grad;
 		background-size: 100% 200%;
 		color: $white;
 		clip-path: polygon(calc(100% - 15px) 0, 100% 14px, 100% 100%, 0 100%, 0 0);
+		border: 0;
+		padding: 16px 54px;
 
 		&:hover {
 			animation: animateGradient 2s ease-in-out infinite !important;
+		}
+
+		@media (max-width: $mobile) {
+			min-width: 200px;
 		}
 	}
 </style>

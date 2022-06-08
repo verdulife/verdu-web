@@ -67,6 +67,7 @@
 		left: 0;
 		right: 0;
 		@include maxWidth;
+		padding: 0 40px;
 		z-index: 99;
 		pointer-events: none;
 
@@ -94,6 +95,11 @@
 		.contact {
 			position: relative;
 			gap: 20px;
+
+			@media (max-width: $mobile) {
+				transform: scale(0.9);
+				transform-origin: right;
+			}
 
 			&:before {
 				content: '';
@@ -140,6 +146,10 @@
 
 		.active {
 			@include textGradient;
+		}
+
+		@media (max-width: $tablet) {
+			display: none;
 		}
 	}
 </style>

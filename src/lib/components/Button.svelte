@@ -11,7 +11,12 @@
 
 <style lang="scss">
 	a.btn {
+		text-align: center;
 		border: 0;
+
+		@media (max-width: $mobile) {
+			min-width: 250px;
+		}
 	}
 
 	.normal {
