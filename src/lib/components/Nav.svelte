@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { slide } from 'svelte/transition';
 
 	const sections = [
 		{
@@ -21,6 +22,7 @@
 	];
 
 	let currentSection: string;
+	let showNavBg = true;
 
 	onMount(() => {
 		const scroll = document.querySelector('.scroll') as HTMLElement;
@@ -28,9 +30,16 @@
 
 		scroll.addEventListener('scroll', () => {
 			currentSection = history.state.section;
+
+			if (scroll.scrollTop > 100) showNavBg = true;
+			else showNavBg = false;
 		});
 	});
 </script>
+
+{#if showNavBg}
+	<div class="scroll-bg" transition:slide />
+{/if}
 
 <nav class="topbar row jbetween xfill">
 	<a class="logo" href="/">
@@ -61,6 +70,17 @@
 </nav>
 
 <style lang="scss">
+	.scroll-bg {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 95px;
+		background-color: rgba(0, 0, 0, 0.1);
+		backdrop-filter: blur(10px);
+		z-index: 98;
+	}
+
 	.topbar {
 		position: fixed;
 		top: 30px;
@@ -78,7 +98,7 @@
 		.logo {
 			position: relative;
 
-			&:before {
+			/* &:before {
 				content: '';
 				position: absolute;
 				top: -25%;
@@ -89,7 +109,7 @@
 				background: #000;
 				filter: blur(30px);
 				z-index: -1;
-			}
+			} */
 		}
 
 		.contact {
@@ -101,7 +121,7 @@
 				transform-origin: right;
 			}
 
-			&:before {
+			/* &:before {
 				content: '';
 				position: absolute;
 				top: -25%;
@@ -112,7 +132,7 @@
 				background: #000;
 				filter: blur(30px);
 				z-index: -1;
-			}
+			} */
 		}
 
 		.email {

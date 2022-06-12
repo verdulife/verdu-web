@@ -45,7 +45,7 @@
 	<title>Home</title>
 </svelte:head>
 
-<div class="scroll">
+<div id="scroll" class="scroll">
 	<Home />
 	<Skills />
 	<Projects />

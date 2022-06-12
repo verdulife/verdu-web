@@ -17,7 +17,8 @@
 	}
 
 	main {
-		background: url('/bg.svg') no-repeat center;
+		background: url('/bg.svg') no-repeat;
 		background-size: calc(100% - (100% / 6) * 2);
+		background-position: calc(50% - 7px) center;
 	}
 </style>

@@ -7,10 +7,11 @@
 		since: string,
 		labels: Array<string>,
 		url: string,
-		github: string;
+		github: string,
+		color: string;
 </script>
 
-<article class="col jend fill">
+<article class="col jend fill" style="--bg-color: {color}">
 	<picture class="fill">
 		<img class="fill" {src} {alt} {title} />
 	</picture>
@@ -37,9 +38,17 @@
 
 <style lang="scss">
 	article {
+		--bg-color: white;
 		position: relative;
-		border-radius: 16px;
-		overflow: hidden;
+
+		&:before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background: var(--bg-color);
+			filter: blur(20px);
+			opacity: 0.2;
+		}
 
 		*:not(picture),
 		*:not(.grad) {
@@ -58,6 +67,8 @@
 	picture {
 		position: absolute;
 		inset: 0;
+		border-radius: 16px;
+		overflow: hidden;
 		pointer-events: none;
 
 		img {
@@ -70,6 +81,8 @@
 		position: absolute;
 		inset: 0;
 		background: linear-gradient(to top, rgba($black, 0.9) 25%, rgba($black, 0.3));
+		border-radius: 16px;
+		overflow: hidden;
 		pointer-events: none;
 		opacity: 0;
 		transition: 200ms;

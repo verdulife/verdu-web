@@ -41,9 +41,9 @@
 
 	<footer class="col acenter xfill">
 		<p>
-			Because one of my passions is <strong>keep learning</strong>,
+			Because one of my passions is to <strong>keep learning</strong>,
 			<br />
-			this are my current mastering skills
+			these are my current mastering skills
 		</p>
 
 		<div class="skills-wrapper col acenter xfill">
@@ -174,6 +174,10 @@
 
 			@media (max-width: $mobile) {
 				font-size: 26px;
+			}
+
+			strong {
+				white-space: nowrap;
 			}
 		}
 	}

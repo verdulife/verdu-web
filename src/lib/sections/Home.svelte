@@ -1,5 +1,18 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+	import { fly } from 'svelte/transition';
 	import Button from '$lib/components/Button.svelte';
+
+	let showScroller = true;
+
+	onMount(() => {
+		const scroll = document.querySelector('#scroll');
+
+		scroll.addEventListener('scroll', () => {
+			if (scroll.scrollTop > 10) showScroller = false;
+			else showScroller = true;
+		});
+	});
 </script>
 
 <section id="home" class="col fcenter fill">
@@ -9,7 +22,7 @@
 				<small>hi👋</small>
 				<br />
 				I'm <strong>verdu</strong>, frontend developer, graphic,
-				<br>
+				<br />
 				UI & UX designer
 			</h1>
 
@@ -24,11 +37,13 @@
 		</div>
 	</div>
 
-	<div class="scroller col fcenter">
-		<v-div />
-		<span><a href="#skills">My skills</a></span>
-		<v-div />
-	</div>
+	{#if showScroller}
+		<div class="scroller col fcenter" transition:fly>
+			<v-div />
+			<span><a href="#skills">My skills</a></span>
+			<v-div />
+		</div>
+	{/if}
 </section>
 
 <style lang="scss">
@@ -48,16 +63,20 @@
 	}
 
 	h1 {
-		font-size: 4.5vw;
+		font-size: 4vw;
 		line-height: 1.1;
 		margin-bottom: 40px;
 
 		@media (max-width: $tablet) {
 			font-size: 50px;
 		}
-		
+
 		@media (max-width: $mobile) {
-			font-size: 45px;
+			font-size: 40px;
+		}
+
+		@media (min-width: $xxl) {
+			font-size: 70px;
 		}
 
 		* {
@@ -71,14 +90,18 @@
 
 		small {
 			font-size: 3.5vw;
-			padding-left: 3.1ch;
-			
+			padding-left: 3ch;
+
 			@media (max-width: $tablet) {
-				font-size: 40px;
+				font-size: 30px;
 			}
-			
+
 			@media (max-width: $mobile) {
 				padding-left: 2.7ch;
+			}
+
+			@media (min-width: $xxl) {
+				font-size: 60px;
 			}
 		}
 	}
@@ -110,7 +133,7 @@
 	.scroller {
 		position: absolute;
 		bottom: 0;
-		left: calc(50% + 7px);
+		left: calc(50%);
 		transform: translateX(-50%);
 
 		v-div {
@@ -120,7 +143,6 @@
 		}
 
 		span {
-			background: #000;
 			padding: 5px;
 
 			a {

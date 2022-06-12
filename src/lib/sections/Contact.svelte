@@ -4,10 +4,10 @@
 
 <section id="contact" class="col acenter xfill">
 	<h2>
-		If you want to contact me, you can use this <a
+		We can get in touch through <a
 			href="https://www.linkedin.com/in/albert-verd%C3%BA-llinares-25ba19134/"
-			target="_blank"><strong>linkedin link</strong></a
-		>, but if you feel oldschool, you can fill this form.
+			target="_blank"><strong>linkedin</strong></a
+		>, but if you feel oldschool, you can fill in this form.
 	</h2>
 
 	<Form />

@@ -6,7 +6,8 @@ export const web = [
 		alt: 'Calandra Automobili screenshot',
 		title: 'Calandra Automobili Website',
 		since: '2021',
-		labels: ['svelte', 'scss']
+		labels: ['svelte', 'scss'],
+		color: '#ff2001'
 	},
 	{
 		url: 'https://www.menuplis.com/',
@@ -15,7 +16,8 @@ export const web = [
 		alt: 'Menuplis screenshot',
 		title: 'Menuplis Webapp',
 		since: '2020',
-		labels: ['angularjs', 'scss', 'firebase']
+		labels: ['angularjs', 'scss', 'firebase'],
+		color: '#ffd000'
 	},
 	{
 		url: 'https://www.soyrup.ml/',
@@ -24,7 +26,8 @@ export const web = [
 		alt: 'SoyRup screenshot',
 		title: 'SoyRup Website',
 		since: '2021',
-		labels: ['svelte', 'scss']
+		labels: ['svelte', 'scss'],
+		color: '#0bd680'
 	},
 	{
 		url: 'https://venarima.vercel.app/',
@@ -33,7 +36,8 @@ export const web = [
 		alt: 'Venarima screenshot',
 		title: 'Venarima Webapp',
 		since: '2021',
-		labels: ['angularjs', 'scss', 'firebase']
+		labels: ['angularjs', 'scss', 'firebase'],
+		color: '#3ff2f5'
 	},
 	{
 		url: 'https://www.frontpad.ml/',
@@ -42,7 +46,8 @@ export const web = [
 		alt: 'Frontpad screenshot',
 		title: 'Frontpad Webapp',
 		since: '2022',
-		labels: ['svelte', 'scss']
+		labels: ['svelte', 'scss'],
+		color: '#8f70fe'
 	},
 	{
 		url: 'https://www.facturasgratis.ml/',
@@ -51,6 +56,7 @@ export const web = [
 		alt: 'Facturasgratis screenshot',
 		title: 'Facturasgratis Webapp',
 		since: '2020',
-		labels: ['svelte', 'scss']
+		labels: ['svelte', 'scss'],
+		color: '#fff500'
 	}
 ];
